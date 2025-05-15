@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Богдан и Виктория - 14.10.2025</title>
+    <style>
+        :root {
+            --primary-color: #e8c4c4; /* Нежно-розовый */
+            --secondary-color: #f5e8e8; /* Светло-бежевый */
+            --accent-color: #a38f8f; /* Пыльно-розовый */
+            --text-color: #5a4a4a; /* Тёмно-коричневый */
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('wedding-background.jpg');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .names {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            letter-spacing: 5px;
+        }
+        
+        .date {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .divider {
+            width: 100px;
+            height: 2px;
+            background-color: white;
+            margin: 2rem 0;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+        
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+        }
+        
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--text-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1 class="names">Богдан & Виктория</h1>
+        <div class="divider"></div>
+        <h2 class="date">14 октября 2025</h2>
+    </div>
+    
+    <nav class="nav">
+        <a href="#about">О нас</a>
+        <a href="#program">Программа</a>
+        <a href="#location">Места</a>
+        <a href="#rsvp">Подтверждение</a>
+        <a href="#gifts">Подарки</a>
+    </nav>
+    
+    <section id="about" class="section">
+        <h2 class="section-title">Наша история</h2>
+        <p>Мы познакомились в 2020 году и с тех пор не расставались. Теперь мы хотим официально стать семьёй и приглашаем вас разделить с нами этот особенный день!</p>
+    </section>
+    
+    <section id="program" class="section">
+        <h2 class="section-title">Программа мероприятий</h2>
+        <h3>Церемония бракосочетания</h3>
+        <p>14 октября 2025 года, 15:00</p>
+        <p>Дворец бракосочетания №1, г. Москва</p>
+        
+        <h3 style="margin-top: 2rem;">Свадебный банкет</h3>
+        <p>16 октября 2025 года, 18:00</p>
+        <p>Ресторан "Белый лебедь", г. Москва</p>
+    </section>
+<section id="location" class="section">
+        <h2 class="section-title">Места проведения</h2>
+        <div id="map" style="height: 400px; width: 100%; margin-top: 2rem;"></div>
+    </section>
+    
+    <section id="rsvp" class="section">
+        <h2 class="section-title">Подтвердите участие</h2>
+        <form id="rsvp-form">
+            <input type="text" placeholder="Ваше имя" required style="padding: 0.8rem; width: 300px; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto;">
+            <input type="email" placeholder="Ваш email" style="padding: 0.8rem; width: 300px; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto;">
+            <select style="padding: 0.8rem; width: 320px; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto;">
+                <option value="">Выберите вариант</option>
+                <option value="yes">С радостью приду!</option>
+                <option value="no">К сожалению, не смогу</option>
+            </select>
+            <textarea placeholder="Комментарии (аллергии, пожелания и т.д.)" style="padding: 0.8rem; width: 300px; height: 100px; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto;"></textarea>
+            <button type="submit" class="btn">Отправить</button>
+        </form>
+    </section>
+    
+    <section id="gifts" class="section">
+        <h2 class="section-title">Подарки</h2>
+        <p>Ваше присутствие - уже прекрасный подарок для нас!</p>
+        <p>Если вы всё же хотите сделать нам подарок, мы будем рады:</p>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>- Конверту с денежным подарком</li>
+            <li>- Подарочным сертификату в магазин бытовой техники</li>
+        </ul>
+        <p>Пожалуйста, воздержитесь от:</p>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>- Крупногабаритных предметов</li>
+            <li>- Цветов в больших количествах</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>С любовью, Богдан и Виктория</p>
+        <p>По всем вопросам: +7 (999) 123-45-67</p>
+    </footer>
+    
+    <script>
+        function initMap() {
+            // Инициализация карты с метками мест проведения
+        }
+        
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за ваш ответ! Мы рады, что вы сможете разделить с нами этот день!');
+            this.reset();
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

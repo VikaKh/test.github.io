@@ -674,11 +674,14 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     
     <script>
         // Таймер до свадьбы
-        document.addEventListener('DOMContentLoaded', function() {
+       document.addEventListener('DOMContentLoaded', function() {
+            // Функция обновления таймера
             function updateCountdown() {
-                const weddingDate = new Date(2025, 9, 14, 15, 0, 0).getTime();
+                // Дата свадьбы - 14 октября 2025, 15:00
+                const weddingDate = new Date(2025, 9, 14, 15, 0, 0).getTime(); // Месяцы в JS: 0-11
                 const now = new Date().getTime();
                 const distance = weddingDate - now;
+                
                 // Если дата уже прошла
                 if (distance < 0) {
                     document.getElementById('days').textContent = '00';
@@ -687,20 +690,23 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
                     document.getElementById('seconds').textContent = '00';
                     return;
                 }
+                
+                // Расчет временных единиц
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
-                 // Обновление элементов DOM
+                // Обновление элементов DOM
                 document.getElementById('days').textContent = days.toString().padStart(2, '0');
                 document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
                 document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
             }
-        
-           updateCountdown();
-           setInterval(updateCountdown, 1000);
+            
+            // Запускаем таймер сразу и затем каждую секунду
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         });
         
         // Модальные окна

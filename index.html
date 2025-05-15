@@ -583,27 +583,29 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         <div class="floral-divider"></div>
         <p class="animate__animated animate__fadeIn">Мы будем рады видеть вас на нашем празднике!<br>Пожалуйста, подтвердите ваше участие до 1 октября 2025 года.</p>
         
-        <form id="rsvp-form" class="animate__animated animate__fadeInUp animate__delay-1s">
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 600px; margin: 0 auto;">
-                <input type="text" placeholder="Ваше имя" required style="padding: 1rem; width: 45%; margin: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
-                <input type="email" placeholder="Ваш email" style="padding: 1rem; width: 45%; margin: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
-                <select required style="padding: 1rem; width: 93%; margin: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
-                    <option value="">Выберите вариант</option>
-
-<option value="yes">С радостью приду!</option>
-                    <option value="no">К сожалению, не смогу</option>
-                </select>
-                <select style="padding: 1rem; width: 93%; margin: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
-                    <option value="">Количество гостей (включая вас)</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <textarea placeholder="Комментарии (аллергии, пожелания и т.д.)" style="padding: 1rem; width: 93%; height: 120px; margin: 0.5rem; border: 1px solid #ddd; border-radius: 5px;"></textarea>
-            </div>
-            <button type="submit" class="btn">Отправить</button>
-        </form>
+         <div class="section" id="rsvp">            
+            <div class="rsvp-form">
+            <iframe id="google-form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSe-370mnLkuywnoYOz16EsgKq6LrgGKBIvMSgASv938D-8fwQ/viewform?embedded=true" 
+            width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">Загрузка...</iframe>
+	<style>
+        .rsvp-form {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        #google-form-iframe {
+            border: none;
+            min-height: 1200px;
+        }
+        
+        @media (max-width: 768px) {
+            #google-form-iframe {
+                height: 1400px;
+            }
+        }
+        </style>
+    </div>
     </section>
     
     <section id="gifts" class="section">

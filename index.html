@@ -332,14 +332,14 @@
             70% { transform: scale(1); }
         }
         
-        .countdown {
+       .countdown {
             display: flex;
             justify-content: center;
-            margin: 3rem 0;
+            margin: 30px 0;
+            font-family: 'Arial', sans-serif;
         }
-        
         .countdown-item {
-            margin: 0 1rem;
+            margin: 0 15px;
             text-align: center;
         }
         
@@ -354,14 +354,13 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            margin: 0 auto 0.5rem;
+            margin: 0 auto 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .countdown-label {
             font-size: 0.9rem;
             color: var(--dark);
-            opacity: 0.8;
         }
         
         .modal {
@@ -452,23 +451,22 @@
         <h1 class="names animate__animated animate__fadeInDown">Богдан<span class="and animate__animated animate__pulse animate__infinite">&</span>Виктория</h1>
         <div class="floral-divider"></div>
         <h2 class="date animate__animated animate__fadeInUp">14 октября 2025</h2>
-        <div class="countdown animate__animated animate__fadeInUp animate__delay-1s">
-            <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">дней</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">часов</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">минут</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">секунд</div>
-            </div>
+            <div class="countdown">
+        <div class="countdown-item">
+            <div class="countdown-number" id="days">00</div>
+            <div class="countdown-label">дней</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-number" id="hours">00</div>
+            <div class="countdown-label">часов</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-number" id="minutes">00</div>
+            <div class="countdown-label">минут</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-number" id="seconds">00</div>
+            <div class="countdown-label">секунд</div>
         </div>
     </div>
     
@@ -666,32 +664,36 @@
     <script>
           // Таймер до свадьбы
     document.addEventListener('DOMContentLoaded', function() {
-        function updateCountdown() {
-            const weddingDate = new Date('October 14, 2025 15:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-            
-            // Если дата уже прошла
-            if (distance < 0) {
-                document.getElementById('days').innerText = '00';
-                document.getElementById('hours').innerText = '00';
-                document.getElementById('minutes').innerText = '00';
-                document.getElementById('seconds').innerText = '00';
-                return;
+            // Функция обновления таймера
+            function updateCountdown() {
+                // Дата свадьбы - 14 октября 2025, 15:00
+                const weddingDate = new Date(2025, 9, 14, 15, 0, 0).getTime(); // Месяцы в JS: 0-11
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+                
+                // Если дата уже прошла
+                if (distance < 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+                
+                // Расчет временных единиц
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Обновление элементов DOM
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
             }
             
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').innerText = days.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-            }
-        
-        // Запускаем сразу и затем каждую секунду
+            // Запускаем таймер сразу и затем каждую секунду
             updateCountdown();
             setInterval(updateCountdown, 1000);
         });

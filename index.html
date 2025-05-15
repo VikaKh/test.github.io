@@ -2,13 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Богдан ❤ Виктория - 14.10.2025</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
+	:root {
             --rose-gold: #e0bfb8;
             --blush: #f5e6e8;
             --dusty-rose: #d4a6b1;
@@ -333,23 +332,20 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             42% { transform: scale(1.3); }
             70% { transform: scale(1); }
         }
-        
         .countdown {
             display: flex;
             justify-content: center;
             margin: 30px 0;
             font-family: 'Arial', sans-serif;
         }
-        
         .countdown-item {
             margin: 0 15px;
             text-align: center;
         }
-        
         .countdown-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: var(--dusty-rose);
+            color: #d4a6b1;
             background: white;
             width: 80px;
             height: 80px;
@@ -357,17 +353,14 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            margin: 0 auto 0.5rem;
+            margin: 0 auto 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
         .countdown-label {
             font-size: 0.9rem;
-            color: var(--dark);
-            opacity: 0.8;
+            color: #5a4a4a;
         }
-        
-        .modal {
+	.modal {
             display: none;
             position: fixed;
             top: 0;
@@ -453,33 +446,33 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     </style>
 </head>
 <body>
-    <div class="header animate__animated animate__fadeIn">
+	<div class="header animate__animated animate__fadeIn">
         <h1 class="names animate__animated animate__fadeInDown">Богдан<span class="and animate__animated animate__pulse animate__infinite">&</span>Виктория</h1>
         <div class="floral-divider"></div>
         <h2 class="date animate__animated animate__fadeInUp">14 октября 2025</h2>
         <div class="countdown animate__animated animate__fadeInUp animate__delay-1s">
-            <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">00</div>
-                    <div class="countdown-label">дней</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">00</div>
-                    <div class="countdown-label">часов</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">00</div>
-                    <div class="countdown-label">минут</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">00</div>
-                    <div class="countdown-label">секунд</div>
-                </div>
-            </div>
-        </div>
+   	<div class="countdown">
+        	<div class="countdown-item">
+           		<div class="countdown-number" id="days">00</div>
+            		<div class="countdown-label">дней</div>
+        	</div>
+        	<div class="countdown-item">
+            		<div class="countdown-number" id="hours">00</div>
+            		<div class="countdown-label">часов</div>
+       		</div>
+        	<div class="countdown-item">
+          		<div class="countdown-number" id="minutes">00</div>
+            		<div class="countdown-label">минут</div>
+        	</div>
+        	<div class="countdown-item">
+            		<div class="countdown-number" id="seconds">00</div>
+            		<div class="countdown-label">секунд</div>
+        	</div>
+   	</div>
+	</div>
     </div>
-    
-    <nav class="nav">
+
+<nav class="nav">
         <a href="#about">О нас</a>
         <a href="#program">Программа</a>
         <a href="#location">Места</a>
@@ -671,10 +664,10 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             <p>Теперь мы хотим официально стать семьёй и приглашаем вас стать свидетелями этого важного момента в нашей жизни!</p>
         </div>
     </div>
-    
+
     <script>
-        // Таймер до свадьбы
-       document.addEventListener('DOMContentLoaded', function() {
+        // Убедимся, что DOM полностью загружен
+        document.addEventListener('DOMContentLoaded', function() {
             // Функция обновления таймера
             function updateCountdown() {
                 // Дата свадьбы - 14 октября 2025, 15:00
@@ -708,9 +701,9 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             updateCountdown();
             setInterval(updateCountdown, 1000);
         });
-    </script>
-    <script>
-        // Модальные окна
+	</script>
+	<script>
+    // Модальные окна
         const storyBtn = document.getElementById('story-btn');
         const storyModal = document.getElementById('story-modal');
         const mapModal = document.getElementById('map-modal');
